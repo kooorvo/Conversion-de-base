@@ -8,8 +8,8 @@ from PyQt6.QtCore import Qt, QTimer
 from PyQt6 import uic 
 
 from conv.binDec import dec_to_bin, bin_to_dec
-from conv.duodec import dec_to_duodec
-from conv.hexa import dec_to_hexa
+from conv.duodec import dec_to_duodec, duo_to_dec
+from conv.hexa import dec_to_hexa, hexa_to_dec
 
 class App(QMainWindow):
     def __init__(self):
@@ -29,28 +29,48 @@ class App(QMainWindow):
         self.copierBtn.clicked.connect(self.copier)
 
     def convClicked(self):
-        combo1 = int(self.baseDep.currentIndex()) # Valeur comprise entre 0 et 1
-        combo2 = int(self.baseF.currentIndex()) # Valeur comprise entre 0 et 3
-        aconv = int(self.aconv.text()) # Texte de l'input
+        combo1 = int(self.baseDep.currentIndex())
+        combo2 = int(self.baseF.currentIndex())
+        aconv = self.aconv.text()
         match (combo1, combo2):
             case (0, 0):
-                self.convFLabel.setText(dec_to_bin(aconv))
+                self.convFLabel.setText(dec_to_bin(int(aconv)))
             case (0, 1):
                 self.convFLabel.setText(f"{aconv}")
             case (0, 2):
-                self.convFLabel.setText(dec_to_duodec(aconv))
+                self.convFLabel.setText(dec_to_duodec(int(aconv)))
             case (0, 3):
-                self.convFLabel.setText(dec_to_hexa(aconv))
+                self.convFLabel.setText(dec_to_hexa(int(aconv)))
             case (1, 0):
-                self.confFLabel.setText(f"{aconv}")
+                self.convFLabel.setText(f"{aconv}")
             case (1, 1):
-                self.convFLabel.setText(bin_to_dec(aconv))
+                self.convFLabel.setText(str(bin_to_dec(aconv)))
             case (1, 2):
-                dec = bin_to_dec(str(aconv))
-                self.convFLabel.setText(dec_to_duodec(dec))
+                dec = bin_to_dec(aconv)
+                self.convFLabel.setText(dec_to_duodec(int(dec)))
             case (1, 3):
-                dec = bin_to_dec(str(aconv))
-                self.convFLabel.setText(dec_to_hexa(dec))
+                dec = bin_to_dec(aconv)
+                self.convFLabel.setText(dec_to_hexa(int(dec)))
+            case (2, 0):
+                dec = duo_to_dec(aconv)
+                self.convFLabel.setText(dec_to_bin(int(dec)))
+            case (2, 1):
+                self.convFLabel.setText(str(duo_to_dec(aconv)))
+            case (2, 2):
+                self.convFLabel.setText(f"{aconv}")
+            case (2, 3):
+                dec = duo_to_dec(aconv)
+                self.convFLabel.setText(dec_to_hexa(int(dec)))
+            case (3, 0):
+                dec = hexa_to_dec(aconv)
+                self.convFLabel.setText(dec_to_bin(int(dec)))
+            case (3, 1):
+                self.convFLabel.setText(str(hexa_to_dec(aconv)))
+            case (3, 2):
+                dec = hexa_to_dec(aconv)
+                self.convFLabel.setText(dec_to_duodec(int(dec)))
+            case (3, 3):
+                self.convFLabel.setText(f"{aconv}")
 
     def copier(self):
         conv = self.convFLabel.text()

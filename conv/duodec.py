@@ -1,6 +1,6 @@
 # from binDec import bin_to_dec
 
-def dec_to_duodec(aconv:int):
+def dec_to_duodec(aconv):
     if aconv == 0:
         return 0
 
@@ -13,3 +13,9 @@ def dec_to_duodec(aconv:int):
         aconv //= 12
 
     return resultat
+
+def duo_to_dec(aconv):
+    if aconv == 0:
+        return 0
+
+    return int(aconv, 12)

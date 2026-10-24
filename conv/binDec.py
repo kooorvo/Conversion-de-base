@@ -1,4 +1,4 @@
-def dec_to_bin(aconv:int):
+def dec_to_bin(aconv):
     conv = bin(aconv)
     return (conv.split("b")[1])
 

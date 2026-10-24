@@ -1,4 +1,4 @@
-def dec_to_hexa(aconv:int):
+def dec_to_hexa(aconv):
     if aconv == 0:
         return 0
 
@@ -11,3 +11,9 @@ def dec_to_hexa(aconv:int):
         aconv //= 16
 
     return resultat
+
+def hexa_to_dec(aconv):
+    if aconv == 0:
+        return 0
+
+    return int(aconv, 16)
