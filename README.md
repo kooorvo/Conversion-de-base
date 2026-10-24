@@ -1,7 +1,9 @@
 ![Static Badge](https://img.shields.io/badge/version-1.0-green?labelColor=grey&color=green) ![Python](https://img.shields.io/badge/Python-3.13-blue?style=flat-square&logo=python&logoColor=white) ![PyQt6](https://img.shields.io/badge/PyQt6-UI-green?style=flat-square&logo=qt&logoColor=white)
 
 # Présentation du logiciel
-<img width="251" height="282" alt="image" src="https://github.com/user-attachments/assets/4c261d62-6cd1-41e5-a10b-f6d48d45ce4f" /> <br>
+<img width="251" height="282" alt="image" src="https://github.com/user-attachments/assets/4c261d62-6cd1-41e5-a10b-f6d48d45ce4f" /> <img width="249" height="280" alt="image" src="https://github.com/user-attachments/assets/a4661026-8c7e-4f21-8ec1-6519bc7b7f2b" /> <img width="250" height="281" alt="image" src="https://github.com/user-attachments/assets/82853fdc-5ad6-4645-945a-71ba231f409a" />
+
+<br>
 Logiciel permettant de convertir un nombre en base 2, 10, 12 ou 16 en base 2, 10, 12 ou 16. (Toujours dans l'objectif de tester des librairie via des petits projets simples)
 
 Codé en _python_ grâce à la librairie PyQt6 (utilisation de _QT Designer_ -> `ui/interface.ui`) avec un surcouche _QSS_ (`ui/style.qss`), codé par l'ia pour gagner du temps (uniquement le QSS, tout le reste est fait à la main).
