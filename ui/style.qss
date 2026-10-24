@@ -1,0 +1,96 @@
+/* Design fait par l'ia (tout le reste c'est moi) */
+
+/* --- Fenêtre principale --- */
+QMainWindow {
+    background-color: #1e1e2e;
+}
+
+/* --- Textes (Labels) --- */
+QLabel {
+    color: #cdd6f4;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* Titre du résultat mis en valeur */
+#label_2 {
+    font-weight: bold;
+    color: #89b4fa;
+}
+
+/* Valeur du résultat (le texte converti) */
+#convFLabel {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a6e3a1;
+    background-color: #313244;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+/* --- Champs de saisie --- */
+QLineEdit {
+    background-color: #313244;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #89b4fa;
+}
+
+/* --- Listes déroulantes --- */
+QComboBox {
+    background-color: #313244;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+QComboBox:hover {
+    border: 1px solid #89b4fa;
+}
+
+QComboBox::drop-down {
+    border: 0px;
+}
+
+/* --- Boutons principaux --- */
+QPushButton#convBtn {
+    background-color: #89b4fa;
+    color: #11111b;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 8px;
+}
+
+QPushButton#convBtn:hover {
+    background-color: #b4befe;
+}
+
+QPushButton#convBtn:pressed {
+    background-color: #74c7ec;
+}
+
+/* --- Bouton Copier --- */
+QPushButton#copierBtn {
+    background-color: #45475a;
+    color: #cdd6f4;
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 6px 12px;
+}
+
+QPushButton#copierBtn:hover {
+    background-color: #585b70;
+    color: #ffffff;
+}
+
+QPushButton#copierBtn:pressed {
+    background-color: #313244;
+}

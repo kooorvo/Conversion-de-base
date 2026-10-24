@@ -7,15 +7,22 @@ from PyQt6.QtGui import QAction
 from PyQt6.QtCore import Qt, QTimer
 from PyQt6 import uic 
 
-from binDec import dec_to_bin, bin_to_dec
-from duodec import dec_to_duodec
-from hexa import dec_to_hexa
+from conv.binDec import dec_to_bin, bin_to_dec
+from conv.duodec import dec_to_duodec
+from conv.hexa import dec_to_hexa
 
 class App(QMainWindow):
     def __init__(self):
         super().__init__() # on initialise la classe parente QMainWindow
 
-        uic.loadUi("interface.ui", self)
+        uic.loadUi("ui/interface.ui", self)
+
+        try:
+            with open("ui/style.qss", "r", encoding="utf-8") as file:
+                self.setStyleSheet(file.read())
+        except FileNotFoundError:
+            print("Fichier style.qss introuvable.")            
+
         self.setFixedSize(self.size()) # Bloque la taille de la fenêtre
 
         self.convBtn.clicked.connect(self.convClicked)
@@ -54,8 +61,6 @@ class App(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    
     fenetre = App()
     fenetre.show()  # Affiche la fenêtre à l'écran
-    
     sys.exit(app.exec())
